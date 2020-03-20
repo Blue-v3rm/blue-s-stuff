@@ -2,7 +2,7 @@ local SMRF = game:GetService("ReplicatedStorage").SwagsManagerRemoteFunction
 local LocalPlayer = game:GetService('Players').LocalPlayer
 local UserInputService = game:GetService('UserInputService')
 local Mouse = LocalPlayer:GetMouse()
-local BLUI = loadstring(readfile('blui.lua'))()
+local BLUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Blue-v3rm/blue-s-stuff/master/blui.lua"))()
 local Swag = {}
 
 function getMySwag()
@@ -170,7 +170,7 @@ Build:Connect(function(Value)
 	end
 end)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Blue-v3rm/blui/master/freecam.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Blue-v3rm/blue-s-stuff/master/freecam.lua"))()
 local FREECAM_MACRO_KB = {Enum.KeyCode.LeftShift, Enum.KeyCode.P}
 local FreecamEnabled = false
 game:GetService('ContextActionService'):BindActionAtPriority("FreecamToggleEvent", function(actionName,state)
