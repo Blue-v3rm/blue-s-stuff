@@ -269,6 +269,11 @@ BLUI.Classes.Button = {
 	end,
 	Initialize = function(self)
 		self.GUIObject.TextButton.TextLabel.Text = self.Properties.Name
+		self.GUIObject.TextButton.MouseButton1Down:Connect(function()
+			for i, v in pairs(self.Connections) do
+				v()
+			end
+		end)
 	end
 }
 
@@ -276,7 +281,7 @@ do
 	local Frame = CreateObject("Frame",{{"BackgroundColor3",Color3.new(0.152941,0.172549,0.203922)},{"BorderSizePixel",0},{"Position",UDim2.new(0.0500000007,0,1,60)},{"Size",UDim2.new(0.899999976,0,0,30)},{"Name","Trigger"}})
 	local Button = CreateObject("TextButton",{{"Font",Enum.Font.SourceSansLight},{"FontSize",Enum.FontSize.Size14},{"Text",""},{"TextColor3",Color3.new(1,1,1)},{"TextSize",14},{"BackgroundColor3",Color3.new(0.278431,0.298039,0.345098)},{"Position",UDim2.new(0,5,0,5)},{"Size",UDim2.new(1,-10,0,20)},{"Parent",Frame}})
 	local Label = CreateObject("TextLabel",{{"Font",Enum.Font.SourceSans},{"FontSize",Enum.FontSize.Size18},{"Text","Button"},{"TextColor3",Color3.new(0.784314,0.784314,0.784314)},{"TextSize",18},{"BackgroundColor3",Color3.new(1,1,1)},{"BackgroundTransparency",1},{"Size",UDim2.new(1,0,1,0)},{"Parent",Button}})
-	BLUI.Classes.GUIBase = Frame
+	BLUI.Classes.Button.GUIBase = Frame
 end
 
 function BLUILib:Create(Element,Properties,Parent)
