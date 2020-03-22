@@ -433,7 +433,7 @@ do
 		end
 		return Enum.ContextActionResult.Pass
 	end
-	_G.HandleActivationInput = HandleActivationInput
+	_G.ToggleFreecam = ToggleFreecam
 
 	ContextActionService:BindActionAtPriority("FreecamToggle", HandleActivationInput, false, TOGGLE_INPUT_PRIORITY, FREECAM_MACRO_KB[#FREECAM_MACRO_KB])
 end
