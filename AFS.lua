@@ -56,7 +56,7 @@ local function onCharacterAdded()
 	local bp = blue.Character.HumanoidRootPart.BodyPosition
 	bp.Changed:Connect(function(prop)
 		if prop == 'Position' then
-			debug.setupvalue(fly, 22, blue.Character.Humanoid.WalkSpeed)
+			debug.setupvalue(fly, speedidx or 22, blue.Character.Humanoid.WalkSpeed)
 		end
 	end)
 end
