@@ -2,15 +2,6 @@ if not game:IsLoaded() then
 	game.Loaded:wait()
 end
 
-if game.PlaceId == 4042427666 then
-	game:GetService('TeleportService'):Teleport(5113680396)
-	return
-end
-
-if game.PlaceId ~= 5113680396 then
-	return
-end
-
 local LocalPlayer = game:GetService('Players').LocalPlayer
 
 local function waitFor(Parent, Child)
@@ -118,11 +109,11 @@ for jobid, joined in pairs(data) do
 	if tick()-tonumber(joined) > 60*8 then
 		data[jobid] = nil
 	end
-end
+end	
 data[game.JobId] = math.floor(tick())
 writefile('chikara.json',game:GetService('HttpService'):JSONEncode(data))
 
-local baseUrl = 'https://games.roblox.com/v1/games/5113680396/servers/Public?sortOrder=Asc&limit=100'
+local baseUrl = 'https://games.roblox.com/v1/games/4042427666/servers/Public?sortOrder=Asc&limit=100'
 local cursor = '&cursor=%s'
 local servers = game:GetService('HttpService'):JSONDecode(game:HttpGet(baseUrl))
 while wait() do
